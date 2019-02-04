@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    long int a[110],b[110],i,j,n,fenmu,sum,outfenzi,outzhenshu;
+    while(scanf("%d",&n)!=EOF)
+    {
+        long int fenzi[110]={1};
+        sum=0;
+        fenmu=1;
+        for(i=0;i<n;i++)
+        {
+            scanf("%d/%d",&a[i],&b[i]);
+            getchar();
+        }
+        for(i=0;i<n;i++)
+        {
+            fenzi[i]=a[i];
+            for(j=0;j<n;j++)
+            {
+                if(j!=i) fenzi[i]=fenzi[i]*b[j];
+            }
+        }
+        for(i=0;i<n;i++) fenmu=fenmu*b[i];
+        for(i=0;i<n;i++) sum=sum+fenzi[i];
+        outzhenshu=sum/fenmu;
+        outfenzi=sum-outzhenshu*fenmu;
+        for(i=2;i<fenmu;i++)
+        {
+            if(outfenzi%i==0&&fenmu%i==0)
+            {
+                outfenzi=outfenzi/i;
+                fenmu=fenmu/i;
+                i--;
+            }
+        }
+        if(outzhenshu==0) printf("%ld/%ld\n",outfenzi,fenmu);
+        else printf("%ld %ld/%ld\n",outzhenshu,outfenzi,fenmu);
+
+
+    }
+    return 0;
+}

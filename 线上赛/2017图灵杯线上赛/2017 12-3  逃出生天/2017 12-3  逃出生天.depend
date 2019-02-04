@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1512276321 source:c:\microsoft visual studio\myprojects\线上赛\2017图灵杯线上赛\2017 12-3  逃出生天\main.c
+	<stdio.h>
+	<stdlib.h>
+

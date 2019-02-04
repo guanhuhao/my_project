@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1511271246 source:c:\microsoft visual studio\myprojects\21 我的算法会不会time limit exceeded\2017\11\main.c
+	<stdio.h>
+	<stdlib.h>
+

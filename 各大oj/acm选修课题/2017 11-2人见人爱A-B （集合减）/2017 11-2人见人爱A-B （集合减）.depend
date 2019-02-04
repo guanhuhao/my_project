@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1509636388 source:c:\microsoft visual studio\myprojects\2017 11-2人见人爱a-b （集合减）\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1519114633 source:c:\microsoft visual studio\myprojects\数据结构\stl vector 向量 c语言实现\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<malloc.h>
+

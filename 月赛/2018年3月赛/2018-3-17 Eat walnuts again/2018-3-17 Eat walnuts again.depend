@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1521264034 source:c:\users\administrator\desktop\编程用\myproject\月赛\2018年3月赛\2018-3-17 eat walnuts again\main.cpp
+	<iostream>
+	<cstdio>
+	<vector>
+

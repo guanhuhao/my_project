@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1521874708 source:c:\users\administrator\desktop\编程用\myproject\线上赛\2018 广东工业大学校赛\强迫症的序列cpp\main.cpp
+	<iostream>
+	<cstdio>
+	<queue>
+	<algorithm>
+

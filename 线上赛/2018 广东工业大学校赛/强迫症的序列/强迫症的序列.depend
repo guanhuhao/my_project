@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1521870520 source:c:\users\administrator\desktop\编程用\myproject\线上赛\2018 广东工业大学校赛\强迫症的序列\main.c
+	<stdio.h>
+	<stdlib.h>
+

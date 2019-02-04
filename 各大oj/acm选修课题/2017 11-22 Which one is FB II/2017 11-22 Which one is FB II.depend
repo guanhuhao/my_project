@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1511350477 source:c:\microsoft visual studio\myprojects\2017 11-22 which one is fb ii\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

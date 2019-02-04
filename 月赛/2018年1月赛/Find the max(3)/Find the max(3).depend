@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1518931295 source:c:\microsoft visual studio\myprojects\月赛\2018年1月赛\find the max(3)\main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<algorithm>
+	<queue>
+

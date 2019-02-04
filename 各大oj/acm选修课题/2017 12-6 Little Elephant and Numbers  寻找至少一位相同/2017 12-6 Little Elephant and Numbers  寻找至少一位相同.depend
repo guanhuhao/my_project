@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1512548344 source:c:\microsoft visual studio\myprojects\acm选修课题\2017 12-6 little elephant and numbers  寻找至少一位相同\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+

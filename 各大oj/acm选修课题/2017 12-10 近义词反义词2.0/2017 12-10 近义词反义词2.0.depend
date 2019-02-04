@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1512902223 source:c:\microsoft visual studio\myprojects\acm选修课题\2017 12-10 近义词反义词2.0\main.c
+	<stdio.h>
+	<stdlib.h>
+

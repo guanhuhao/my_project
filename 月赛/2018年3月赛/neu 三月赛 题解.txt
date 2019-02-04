@@ -1,0 +1,950 @@
+A 容斥 Eat walnuts  ID：1343
+#include <bits/stdc++.h>
+#define ll long long
+#define fir first
+#define se second
+using namespace std;
+const int maxn=1e5+10;
+struct Edge{
+    int u,v,next;
+}edge[maxn*10];
+int head[maxn];
+int tot=0;
+void init(){
+    memset(head,-1,sizeof(head));
+    tot=0;
+}
+void addedge(int u,int v){
+    edge[tot]=Edge{u,v,head[u]};
+    head[u]=tot++;
+}
+int d[maxn];
+int vis[maxn];
+void bfs(int rt){
+    queue<int> q;
+    memset(d,0,sizeof(d));
+    memset(vis,0,sizeof(vis));
+    q.push(rt);
+    vis[rt]=1;
+    while (!q.empty()){
+        int u=q.front();
+        q.pop();
+        for (int i=head[u];~i;i=edge[i].next){
+            int v=edge[i].v;
+            if (vis[v]) continue;
+            d[v]=d[u]+1;
+            vis[v]=1;
+            q.push(v);
+        }
+    }
+}
+int n;
+int main(){
+    //freopen("data1.in","r",stdin);
+    //freopen("data.out","w",stdout);
+    int t;
+    int cnt=0;
+    while (scanf("%d",&n)!=EOF){
+        cnt++;
+        init();
+        //cout<<n<<" "<<endl;
+        for (int i=1;i<n;i++){
+            int u,v;
+            scanf("%d %d",&u,&v);
+            addedge(u,v);
+            addedge(v,u);
+        }
+        //continue;
+        bfs(1);
+
+        /*for (int i=1;i<=n;i++) cout<<d[i]<<" ";
+        cout<<endl;*/
+        int Max=0;
+        int rt=-1;
+        for (int i=1;i<=n;i++){
+            if (Max<d[i]){
+                Max=d[i];
+                rt=i;
+            }
+        }
+
+        bfs(rt);
+       /* cout<<"rt="<<rt<<endl;
+        for (int i=1;i<=n;i++) cout<<d[i]<<" ";
+        cout<<endl;*/
+        int num=0;
+        Max=0;
+        for (int i=1;i<=n;i++){
+            Max=max(Max,d[i]);
+        }
+        //if (cnt==4) cout<<Max<<endl;
+        for (int i=1;i<=n;i++)
+            if (Max==d[i]) num++;
+        if (num>1){
+            printf("%d\n",Max);
+        }
+        else{
+            for (int i=1;i<=n;i++)
+                if (Max==d[i]) rt=i;
+            bfs(rt);
+            Max=0;
+            for (int i=1;i<=n;i++){
+                Max=max(Max,d[i]);
+            }
+            num=0;
+            for (int i=1;i<=n;i++){
+                if (Max==d[i]) num++;
+            }
+            if (num>1){
+                printf("%d\n",Max);
+            }
+            else printf("%d\n",Max-1);
+        }
+    }
+    return 0;
+}
+3.Advice from the elderly   ID：1345
+#include <bits/stdc++.h>
+#define ll long long
+#define fir first
+#define se second
+using namespace std;
+const int maxn=1e5+10;
+const ll mod=1e9+7;
+const double eps=1e-7;
+int n;
+ll m;
+struct node{
+    ll p,c,t;
+    node(ll pp=0,ll cc=0,ll tt=0){
+        p=pp;
+        c=cc;
+        t=tt;
+    }
+    void input(){
+        scanf("%lld %lld %lld",&p,&c,&t);
+    }
+
+};
+node temp[maxn];
+ll dp[maxn];
+vector<node> v;
+int main(){
+    int t;
+    cin>>t;
+    while (t--){
+        scanf("%d %lld",&n,&m);
+        for (int i=0;i<n;i++) temp[i].input();
+        v.clear();
+        for (int i=0;i<n;i++){
+            ll num=temp[i].t;
+            ll cur=1;
+            //cout<<num<<" "<<cur<<endl;
+            ll p=temp[i].p,c=temp[i].c;
+            while (cur<=num){
+                v.push_back(node(p*(cur),c*(cur),cur));
+                num-=cur;
+                cur*=2;
+            }
+            if (num){
+                v.push_back(node(p*num,c*num,num));
+            }
+        }
+       // for (int i=0;i<v.size();i++) cout<<v[i].p<<" "<<v[i].c<<" "<<v[i].t<<endl;
+        memset(dp,0,sizeof(dp));
+        for (int i=0;i<v.size();i++){
+            for (int j=m;j>=v[i].c;j--){
+                dp[j]=max(dp[j],dp[j-v[i].c]+v[i].p);
+            }
+        }
+        ll Max=0;
+        for (int i=0;i<=m;i++) Max=max(Max,dp[i]);
+        printf("%lld\n",Max);
+    }
+    return 0;
+}
+
+
+B eat walnuts again ID:1344
+#include <bits/stdc++.h>
+#define ll long long
+#define fir first
+#define se second
+using namespace std;
+const int maxn=150;
+ll dp[maxn][maxn];  //dp(i,j)表示消去(i,j)的最小权值
+ll a[maxn];
+int n;
+ll dfs(ll beg,ll end){
+    //cout<<beg<<" "<<end<<endl;
+    ll Min=1e9;
+    if (end<beg) return 0;
+    if (dp[beg][end]!=-1) return dp[beg][end];
+    for (ll i=beg;i<=end;i++){
+        Min=min(Min,dfs(beg,i-1)+(a[beg-1]+a[i]+a[end+1])*(a[beg-1]+a[i]+a[end+1])+dfs(i+1,end));
+    }
+    return dp[beg][end]=Min;
+}
+int main(){
+    while (cin>>n){
+        for (int i=1;i<=n;i++) scanf("%lld",&a[i]);
+        memset(dp,-1,sizeof(dp));
+        ll res=dfs(2,n-1);
+        printf("%lld\n",res);
+    }
+    return 0;
+}
+
+
+E。计算几何  Yuriko Omega ID：1348
+#include <bits/stdc++.h>
+using namespace std;
+#define maxn 100005
+const double eps = 1e-7;
+const double INF = 1e20;
+const double pi = acos (-1.0);
+int dcmp ( double x)
+{
+    if ( fabs (x) < eps) return 0;
+    return (x < 0 ? -1 : 1);
+}
+inline double sqr ( double x)
+{
+    return x*x;
+}
+//*************?
+struct Point
+{
+    double x, y;
+    Point ( double _x = 0, double _y = 0):x(_x), y(_y) {}
+    void input ()
+    {
+        scanf ( "%lf%lf", &x, &y);
+    }
+    void output ()
+    {
+        printf ( "%.2f %.2f\n", x, y);
+    }
+    bool operator == ( const Point &b) const
+    {
+        return (dcmp (x-b.x) == 0 && dcmp (y-b.y) == 0);
+    }
+    bool operator < ( const Point &b) const
+    {
+        return (dcmp (x-b.x) == 0 ? dcmp (y-b.y) < 0 : x < b.x);
+    }
+    Point operator + ( const Point &b) const
+    {
+        return Point (x+b.x, y+b.y);
+    }
+    Point operator - ( const Point &b) const
+    {
+        return Point (x-b.x, y-b.y);
+    }
+    Point operator * ( double a)
+    {
+        return Point (x*a, y*a);
+    }
+    Point operator / ( double a)
+    {
+        return Point (x/a, y/a);
+    }
+    double len2 ()  //???????
+    {
+        return sqr (x) + sqr (y);
+    }
+    double len ()  //????
+    {
+        return sqrt (len2 ());
+    }
+    Point change_len ( double r)  //??????r???
+    {
+        double l = len ();
+        if (dcmp (l) == 0) return *this; //???????
+        r /= l;
+        return Point (x*r, y*r);
+    }
+    Point rotate_left ()  //?????90?
+    {
+        return Point (-y, x);
+    }
+    Point rotate_right ()  //?????90?
+    {
+        return Point (y, -x);
+    }
+    Point rotate (Point p, double ang)  //??p?????ang
+    {
+        Point v = (*this)-p;
+        double c = cos (ang), s = sin (ang);
+        return Point (p.x + v.x*c - v.y*s, p.y + v.x*s + v.y*c);
+    }
+    Point normal ()  //?????
+    {
+        double l = len ();
+        return Point (-y/l, x/l);
+    }
+};
+double cross (Point a, Point b)  //??
+{
+    return a.x*b.y-a.y*b.x;
+}
+double dot (Point a, Point b)  //??
+{
+    return a.x*b.x + a.y*b.y;
+}
+double dis (Point a, Point b)  //??????
+{
+    Point p = b-a;
+    return p.len ();
+}
+double degree_rad ( double ang)  //???????
+{
+    return ang/180*pi;
+}
+double rad_degree ( double rad)  //???????
+{
+    return rad/pi*180;
+}
+double rad (Point a, Point b)  //???????
+{
+    return fabs ( atan2 ( fabs (cross (a, b)), dot (a, b)) );
+}
+bool parallel (Point a, Point b)  //????
+{
+    double p = rad (a, b);
+    return dcmp (p) == 0 || dcmp (p-pi) == 0;
+}
+//************?? ??
+struct Line
+{
+    Point s, e; //??????
+    double k; //?? ??[-pi,pi]
+    Line () {}
+    Line (Point _s, Point _e)
+    {
+        s = _s, e = _e;
+        k = atan2 (e.y - s.y,e.x - s.x);
+    }
+//ax+by+c = 0
+    Line ( double a, double b, double c)
+    {
+        if (dcmp (a) == 0)
+        {
+            s = Point ( 0, -c/b);
+            e = Point ( 1, -c/b);
+        }
+        else if (dcmp (b) == 0)
+        {
+            s = Point (-c/a, 0);
+            e = Point (-c/a, 1);
+        }
+        else
+        {
+            s = Point ( 0, -c/b);
+            e = Point ( 1, (-c-a)/b);
+        }
+        get_angle ();
+    }
+//???????????
+    Line (Point p, double ang)
+    {
+        k = ang;
+        s = p;
+        if (dcmp (ang-pi/2) == 0)
+        {
+            e = s + Point ( 0, 1);
+        }
+        else
+            e = s + Point ( 1, tan (ang));
+    }
+    void input ()
+    {
+        s.input ();
+        e.input ();
+    }
+    void output ()
+    {
+        printf ( "%.2f,%.2f %.2f,%.2f\n", s.x, s.y, e.x, e.y);
+    }
+    void adjust ()
+    {
+        if (e < s) swap (e, s);
+    }
+    double length ()  //?????
+    {
+        return dis (s, e);
+    }
+    void get_angle ()
+    {
+        k = atan2 (e.y - s.y,e.x - s.x);
+    }
+    double angle ()  //??????
+    {
+        if (dcmp (k) < 0) k += pi;
+        if (dcmp (k-pi) == 0) k -= pi;
+        return k;
+    }
+    Point operator &( const Line &b) const  //?????( ????)
+    {
+        Point res = s;
+        double t = (cross (s - b.s, b.s - b.e))/cross (s - e, b.s - b.e
+                                                      );
+        res.x += (e.x - s.x)*t;
+        res.y += (e.y - s.y)*t;
+        return res;
+    }
+};
+int relation (Point p, Line l)  //???????
+{
+//1: ??? 2: ??? 3: ????
+    int c = dcmp (cross (p-l.s, l.e-l.s));
+    if (c < 0) return 1;
+    else if (c > 0) return 2;
+    else return 3;
+}
+bool point_on_halfline (Point p, Line l)  //???????
+{
+    int id = relation (p, l);
+    if (id != 3) return 0;
+    return dcmp (dot (p-l.s, l.e-l.s)) >= 0;
+}
+bool point_on_seg (Point p, Line l)  //???????
+{
+    return dcmp (cross (p-l.s, l.e-l.s)) == 0 &&
+           dcmp (dot (p-l.s, p-l.e) <= 0);
+//????????????????
+}
+bool parallel (Line a, Line b)  //????
+{
+    return parallel (a.e-a.s, b.e-b.s);
+}
+int seg_cross_seg (Line a, Line v)  //??????
+{
+//2: ???? 1: ????? 0: ???
+    int d1 = dcmp (cross (a.e-a.s, v.s-a.s));
+    int d2 = dcmp (cross (a.e-a.s, v.e-a.s));
+    int d3 = dcmp (cross (v.e-v.s, a.s-v.s));
+    int d4 = dcmp (cross (v.e-v.s, a.e-v.s));
+    if ((d1^d2) == -2 && (d3^d4) == -2) return 2;
+    return (d1 == 0 && dcmp (dot (v.s-a.s, v.s-a.e)) <= 0) ||
+           (d2 == 0 && dcmp (dot (v.e-a.s, v.e-a.e)) <= 0) ||
+           (d3 == 0 && dcmp (dot (a.s-v.s, a.s-v.e)) <= 0) ||
+           (d4 == 0 && dcmp (dot (a.e-v.s, a.e-v.e)) <= 0);
+}
+int line_cross_seg (Line a, Line v)  //????????? a??v??
+{
+//2: ???? 1: ????? 0: ???
+    int d1 = dcmp (cross (a.e-a.s, v.s-a.s));
+    int d2 = dcmp (cross (a.e-a.s, v.e-a.s));
+    if ((d1^d2) == -2) return 2;
+    return (d1 == 0 || d2 == 0);
+}
+int line_cross_line (Line a, Line v)  //??????
+{
+//0: ?? 1: ?? 2: ??
+    if (parallel (a, v)) return relation (a.e, v) == 3;
+    return 2;
+}
+Point line_intersection (Line a, Line v)  //????
+{
+//????????
+    double a1 = cross (v.e-v.s, a.s-v.s);
+    double a2 = cross (v.e-v.s, a.e-v.s);
+    return Point ((a.s.x*a2-a.e.x*a1)/(a2-a1), (a.s.y*a2-a.e.y*a1)/(a2-
+                  a1));
+}
+int seg_intersectiong (Line a, Line b, Point &p)  //?????
+{
+//0: ???? 1: ???? 2: ?????
+//???????????
+    int rel = seg_cross_seg (a, b);
+    if (rel == 0) return 0;
+    int cnt = 0;
+    if (rel == 1)
+    {
+        if (point_on_seg (a.e, b)) p = a.e, cnt++;
+        if (point_on_seg (a.s, b)) p = a.s, cnt++;
+        if (point_on_seg (b.e, a)) p = b.e, cnt++;
+        if (point_on_seg (b.s, a)) p = b.s, cnt++;
+        return 2;
+    }
+    p = line_intersection (a, b);
+    return 1;
+}
+double point_to_line (Point p, Line a)  //???????
+{
+    return fabs (cross (p-a.s, a.e-a.s) / a.length ());
+}
+double point_to_seg (Point p, Line a)  //???????
+{
+    if (dcmp (dot (p-a.s, a.e-a.s)) < 0 || dcmp (dot (p-a.e, a.s-a.e))
+            < 0)
+        return min (dis (p, a.e), dis (p, a.s));
+    return point_to_line (p, a);
+}
+Point projection (Point p, Line a)  //????????
+{
+    return a.s + (((a.e-a.s) * dot (a.e-a.s, p-a.s)) / (a.e-a.s).len2()
+                 );
+}
+Point symmetry (Point p, Line a)  //?????????
+{
+    Point q = projection (p, a);
+    return Point ( 2*q.x-p.x, 2*q.y-p.y);
+}
+//***************?
+struct Circle
+{
+//?? ??
+    Point p;
+    double r;
+    Circle () {}
+    Circle (Point _p, double _r) : p(_p), r(_r) {}
+    Circle ( double a, double b, double _r)   //???? ?????
+    {
+        p = Point (a, b);
+        r = _r;
+    }
+    void input ()
+    {
+        p.input ();
+        scanf ( "%lf", &r);
+    }
+    void output ()
+    {
+        p.output ();
+        printf ( " %.2f\n", r);
+    }
+    bool operator == ( const Circle &a) const
+    {
+        return p == a.p && (dcmp (r-a.r) == 0);
+    }
+    double area ()  //??
+    {
+        return pi*r*r;
+    }
+    double circumference ()  //??
+    {
+        return 2*pi*r;
+    }
+    bool operator < ( const Circle &a) const
+    {
+        return p < a.p || (p == a.p && r < a.r);
+    }
+};
+int relation (Point p, Circle a)  //??????
+{
+//0: ?? 1: ?? 2: ??
+    double d = dis (p, a.p);
+    if (dcmp (d-a.r) == 0) return 1;
+    return (dcmp (d-a.r) < 0 ? 2 : 0);
+}
+int relation (Line a, Circle b)  //???????
+{
+//0: ?? 1: ?? 2: ??
+    double p = point_to_line (b.p, a);
+    if (dcmp (p-b.r) == 0) return 1;
+    return (dcmp (p-b.r) < 0 ? 2 : 0);
+}
+int relation (Circle a, Circle v)  //???????
+{
+//1: ?? 2: ?? 3: ?? 4: ?? 5: ??
+    double d = dis (a.p, v.p);
+    if (dcmp (d-a.r-v.r) > 0) return 5;
+    if (dcmp (d-a.r-v.r) == 0) return 4;
+    double l = fabs (a.r-v.r);
+    if (dcmp (d-a.r-v.r) < 0 && dcmp (d-l) > 0) return 3;
+    if (dcmp (d-l) == 0) return 2;
+    if (dcmp (d-l) < 0) return 1;
+    return 0;
+}
+Circle out_circle (Point a, Point b, Point c)  //??????
+{
+    Line u = Line ((a+b)/2, ((a+b)/2) + (b-a).rotate_left ());
+    Line v = Line ((b+c)/2, ((b+c)/2) + (c-b).rotate_left ());
+    Point p = line_intersection (u, v);
+    double r = dis (p, a);
+    return Circle (p, r);
+}
+Circle in_circle (Point a, Point b, Point c)  //??????
+{
+    Line u, v;
+    double m = atan2 (b.y-a.y, b.x-a.x), n = atan2 (c.y-a.y, c.x-a.x);
+    u.s = a;
+    u.e = u.s+Point ( cos ((n+m)/2), sin ((n+m)/2));
+    v.s = b;
+    m = atan2 (a.y-b.y, a.x-b.x), n = atan2 (c.y-b.y, c.x-b.x);
+    v.e = v.s + Point ( cos ((n+m)/2), sin ((n+m)/2));
+    Point p = line_intersection (u, v);
+    double r = point_to_seg (p, Line (a, b));
+    return Circle (p, r);
+}
+int circle_intersection (Circle a, Circle v, Point &p1, Point &p2)  //?
+{
+    int rel = relation (a, v);
+    if (rel == 1 || rel == 5) return 0;
+    double d = dis (a.p, v.p);
+    double l = (d*d + a.r*a.r - v.r*v.r) / ( 2*d);
+    double h = sqrt (a.r*a.
+                     r - l*l);
+    Point tmp = a.p + (v.p-a.p).change_len (l);
+    p1 = tmp + ((v.p-a.p).rotate_left ().change_len (h));
+    p2 = tmp + ((v.p-a.p).rotate_right ().change_len (h));
+    if (rel == 2 || rel == 4) return 1;
+    return 2;
+}
+int line_cirlce_intersection (Line v, Circle u, Point &p1, Point &p2)
+{
+//???????
+//?????? ????????
+    if (!relation (v, u)) return 0;
+    Point a = projection (u.p, v);
+    double d = point_to_line (u.p, v);
+    d = sqrt (u.r*u.r - d*d);
+    if (dcmp (d) == 0)
+    {
+        p1 = a, p2 = a;
+        return 1;
+    }
+    p1 = a + (v.e-v.s).change_len (d);
+    p2 = a - (v.e-v.s).change_len (d);
+    return 2;
+}
+int get_circle (Point a, Point b, double r1, Circle &c1, Circle &c2)
+{
+    Circle x (a, r1) , y (b, r1) ;
+    int t = circle_intersection (x, y, c1.p, c2.p);
+    if (!t) return 0;
+    c1.r = c2.r = r1;
+    return t;
+}
+int get_circle (Line u, Point q, double r1, Circle &c1, Circle &c2)  //
+{
+    double d = point_to_line (q, u);
+    if (dcmp (d-r1*2) > 0) return 0;
+    if (dcmp (d) == 0)
+    {
+        c1.p = q + ((u.e-u.s).rotate_left ().change_len (r1));
+        c2.p = q + ((u.e-u.s).rotate_right ().change_len (r1));
+        c1.r = c2.r = r1;
+        return 2;
+    }
+    Line u1 = Line (u.s + (u.e-u.s).rotate_left ().change_len (r1), u.e
+                    + (u.e-u.s).rotate_left ().change_len (r1));
+    Line u2 = Line (u.s + (u.e-u.s).rotate_right ().change_len (r1), u.
+                    e + (u.e-u.s).rotate_right ().change_len (r1));
+    Circle cc = Circle (q, r1);
+    Point p1, p2;
+    if (!line_cirlce_intersection (u1, cc, p1, p2))
+        line_cirlce_intersection (u2, cc, p1, p2);
+    c1 = Circle (p1, r1);
+    if (p1 == p2)
+    {
+        c2 = c1;
+        return 1;
+    }
+    c2 = Circle (p2, r1);
+    return 2;
+}
+int get_circle (Line u, Line v, double r1, Circle &c1, Circle &c2, Circle &c3, Circle &c4)  //???u,v?? ???r1??
+{
+    if (parallel (u, v)) return 0;
+    Line u1 = Line (u.s + (u.e-u.s).rotate_left ().change_len (r1), u.e
+                    + (u.e-u.s).rotate_left ().change_len (r1));
+    Line u2 = Line (u.s + (u.e-u.s).rotate_right ().change_len (r1), u.
+                    e + (u.e-u.s).rotate_right ().change_len (r1));
+    Line v1 = Line (v.s + (v.e-v.s).rotate_left ().change_len (r1), v.e
+                    + (v.e-v.s).rotate_left ().change_len (r1));
+    Line v2 = Line (v.s + (v.e-v.s).rotate_right ().change_len (r1), v.
+                    e + (v.e-v.s).rotate_right ().change_len (r1));
+    c1.r = c2.r = c3.r = c4.r = r1;
+    c1.p = line_intersection (u1, v1);
+    c2.p = line_intersection (u1, v2);
+    c3.p = line_intersection (u2, v1);
+    c4.p = line_intersection (u2, v2);
+    return 4;
+}
+int get_circle (Circle cx, Circle cy, double r1, Circle &c1, Circle &c2
+               )  //?????? ???r1??
+{
+//???????
+    Circle x (cx.p, r1+cx.r) , y (cy.p, r1+cy.r) ;
+    int t = circle_intersection (x, y, c1.p, c2.p);
+    if (!t) return 0;
+    c1.r = c2.r = r1;
+    return t;
+}
+int tan_line (Point q, Circle a, Line &u, Line &v)  //???????
+{
+    int x = relation (q, a);
+    if (x == 2) return 0;
+    if (x == 1)
+    {
+        u = Line (q, q + (q-a.p).rotate_left ());
+        v = u;
+        return 1;
+    }
+    double d = dis (a.p, q);
+    double l = a.r*a.r/d;
+    double h = sqrt (a.r*a.r - l*l);
+    u = Line (q, a.p + (q-a.p).change_len (l) + (q-a.p).rotate_left ().
+              change_len (h));
+    v = Line (q, a.p + (q-a.p).change_len (l) + (q-a.p).rotate_right ()
+              .change_len (h));
+    return 2;
+}
+double area_circle (Circle a, Circle v)  //??????
+{
+    int rel = relation (a, v);
+    if (rel >= 4) return 0;
+    if (rel <= 2) return min (a.area (), v.area ());
+    double d = dis (a.p, v.p);
+    double hf = (a.r+v.r+d)/2;
+    double ss = 2*sqrt (hf*(hf-a.r)*(hf-v.r)*(hf-d));
+    double a1 = acos ((a.r*a.r+d*d-v.r*v.r) / ( 2*a.r*d));
+    a1 = a1*a.r*a.r;
+    double a2 = acos ((v.r*v.r+d*d-a.r*a.r) / ( 2*v.r*d));
+    a2 = a2*v.r*v.r;
+    return a1+a2-ss;
+}
+double circle_traingle_area (Point a, Point b, Circle c)  //???????
+{
+
+//a.output (), b.output (), c.output ();?
+    Point p = c.p;
+    double r = c.r; //cout << cross (p-a, p-b) << endl;
+    if (dcmp (cross (p-a, p-b)) == 0) return 0;
+    Point q[5];
+    int len = 0;
+    q[len++] = a;
+    Line l(a, b) ;
+    Point p1, p2;
+    if (line_cirlce_intersection (l, c, q[1], q[2]) == 2)
+    {
+        if (dcmp (dot (a-q[1], b-q[1])) < 0) q[len++] = q[1];
+        if (dcmp (dot (a-q[2], b-q[2])) < 0) q[len++] = q[2];
+    }
+    q[len++] = b;
+    if (len == 4 && dcmp (dot (q[0]-q[1], q[2]-q[1])) > 0)
+        swap (q[1], q[2]);
+    double res = 0;
+    for ( int i = 0; i < len-1; i++)
+    {
+        if (relation (q[i], c) == 0 || relation (q[i+1], c) == 0)
+        {
+            double arg = rad (q[i]-p, q[i+1]-p);
+            res += r*r*arg/2.0;
+        }
+        else
+        {
+            res += fabs (cross (q[i]-p, q[i+1]-p))/2;
+        }
+    } //cout << res << ".." << endl;
+    return res;
+}
+Point p[maxn];
+int val[maxn];
+int n;
+int main(){
+    int t;
+    while (~scanf("%d",&n)){
+        int Max=0;
+        for (int i=1;i<=n;i++){
+            p[i].input();
+            scanf("%d",&val[i]);
+            Max=max(Max,val[i]);
+        }
+        for (int i=1;i<=n;i++){
+            for (int j=i;j<=n;j++){
+                if (i==j) continue;
+                Circle c1,c2;
+                int num=get_circle(p[i],p[j],1.0,c1,c2);
+                if (num==0) continue;
+                int sum=0;
+                for (int i=1;i<=n;i++){
+                    if (relation(p[i],c1)) sum+=val[i];
+                }
+                Max=max(Max,sum);
+                sum=0;
+                for (int i=1;i<=n;i++){
+                    if (relation(p[i],c2)) sum+=val[i];
+                }
+                Max=max(Max,sum);
+            }
+        }
+        printf("%d\n",Max);
+    }
+    return 0;
+}
+
+F   Student activities  ID：1349
+#include <bits/stdc++.h>
+#define ll long long
+#define fir first
+#define se second
+using namespace std;
+const int maxn=1e5+10;
+const ll mod=1e9+7;
+const double eps=1e-7;
+struct Edge{
+    int u,v;
+    int next;
+}edge[maxn*10];
+int head[maxn];
+int tot=0;
+void init(){
+    tot=0;
+    memset(head,-1,sizeof(head));
+}
+void addedge(int u,int v){
+    edge[tot]=Edge{u,v,head[u]};
+    head[u]=tot++;
+}
+int in[maxn];
+int n,m;
+int dp[maxn];   //dp(i)表示以i为路径末尾的最长链长度
+int main(){
+    int t;
+    cin>>t;
+    while (t--){
+        init();
+        memset(in,0,sizeof(in));
+        scanf("%d %d",&n,&m);
+        for (int i=0;i<m;i++){
+            int u,v;
+            scanf("%d %d",&u,&v);
+            addedge(u,v);
+            in[v]++;
+        }
+        memset(dp,0,sizeof(dp));
+        for (int i=0;i<n;i++) dp[i]=1;
+        queue<int> q;
+        for (int i=0;i<n;i++){
+            if (!in[i]){
+                dp[i]=1;
+                q.push(i);
+            }
+        }
+        while (!q.empty()){
+            int u=q.front();
+            q.pop();
+            for (int i=head[u];~i;i=edge[i].next){
+                int v=edge[i].v;
+                dp[v]=max(dp[v],dp[u]+1);
+                in[v]--;
+                if (!in[v]) q.push(v);
+            }
+        }
+        int Max=0;
+        for (int i=0;i<n;i++) Max=max(Max,dp[i]);
+        printf("%d\n",Max);
+    }
+    return 0;
+}
+
+G  The second longest path on tree  ID：1340
+
+#include <bits/stdc++.h>
+#define ll long long
+#define fir first
+#define se second
+using namespace std;
+const int maxn=1e5+10;
+struct Edge{
+    int u,v,next;
+}edge[maxn*10];
+int head[maxn];
+int tot=0;
+void init(){
+    memset(head,-1,sizeof(head));
+    tot=0;
+}
+void addedge(int u,int v){
+    edge[tot]=Edge{u,v,head[u]};
+    head[u]=tot++;
+}
+int d[maxn];
+int vis[maxn];
+void bfs(int rt){
+    queue<int> q;
+    memset(d,0,sizeof(d));
+    memset(vis,0,sizeof(vis));
+    q.push(rt);
+    vis[rt]=1;
+    while (!q.empty()){
+        int u=q.front();
+        q.pop();
+        for (int i=head[u];~i;i=edge[i].next){
+            int v=edge[i].v;
+            if (vis[v]) continue;
+            d[v]=d[u]+1;
+            vis[v]=1;
+            q.push(v);
+        }
+    }
+}
+int n;
+int main(){
+    //freopen("data1.in","r",stdin);
+    //freopen("data.out","w",stdout);
+    int t;
+    int cnt=0;
+    while (scanf("%d",&n)!=EOF){
+        cnt++;
+        init();
+        //cout<<n<<" "<<endl;
+        for (int i=1;i<n;i++){
+            int u,v;
+            scanf("%d %d",&u,&v);
+            addedge(u,v);
+            addedge(v,u);
+        }
+        //continue;
+        bfs(1);
+
+        /*for (int i=1;i<=n;i++) cout<<d[i]<<" ";
+        cout<<endl;*/
+        int Max=0;
+        int rt=-1;
+        for (int i=1;i<=n;i++){
+            if (Max<d[i]){
+                Max=d[i];
+                rt=i;
+            }
+        }
+
+        bfs(rt);
+       /* cout<<"rt="<<rt<<endl;
+        for (int i=1;i<=n;i++) cout<<d[i]<<" ";
+        cout<<endl;*/
+        int num=0;
+        Max=0;
+        for (int i=1;i<=n;i++){
+            Max=max(Max,d[i]);
+        }
+        //if (cnt==4) cout<<Max<<endl;
+        for (int i=1;i<=n;i++)
+            if (Max==d[i]) num++;
+        if (num>1){
+            printf("%d\n",Max);
+        }
+        else{
+            for (int i=1;i<=n;i++)
+                if (Max==d[i]) rt=i;
+            bfs(rt);
+            Max=0;
+            for (int i=1;i<=n;i++){
+                Max=max(Max,d[i]);
+            }
+            num=0;
+            for (int i=1;i<=n;i++){
+                if (Max==d[i]) num++;
+            }
+            if (num>1){
+                printf("%d\n",Max);
+            }
+            else printf("%d\n",Max-1);
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1512566993 source:c:\microsoft visual studio\myprojects\acm选修课题\2017 12-6 myt的大水题 c++排序\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<algorithm>
+

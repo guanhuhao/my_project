@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1512130492 source:c:\microsoft visual studio\myprojects\text cb\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1512905032 source:c:\microsoft visual studio\myprojects\text文件\text cb\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1524725040 source:c:\users\administrator\desktop\编程用\myproject\text文件\text cb\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1509939392 source:c:\microsoft visual studio\myprojects\2017 11-5 smartphone\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

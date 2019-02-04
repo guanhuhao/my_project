@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1517038662 source:c:\microsoft visual studio\myprojects\月赛\2017年12月赛\2018 1-27 pokémon ultra sun dp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1517582616 source:c:\microsoft visual studio\myprojects\月赛\2018年1月赛\2018 1-27 pokémon ultra sun dp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

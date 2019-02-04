@@ -1,0 +1,8 @@
+﻿  2018-11-10 common knowdge.cpp
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-11-10德国程序设计大赛\2018-11-10 common knowdge\2018-11-10 common knowdge\2018-11-10 common knowdge.cpp(9): error C4235: 使用了非标准扩展: 不支持在此结构上使用“__int128”关键字
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-11-10德国程序设计大赛\2018-11-10 common knowdge\2018-11-10 common knowdge\2018-11-10 common knowdge.cpp(9): error C2065: “n”: 未声明的标识符
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-11-10德国程序设计大赛\2018-11-10 common knowdge\2018-11-10 common knowdge\2018-11-10 common knowdge.cpp(9): error C2065: “ans”: 未声明的标识符
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-11-10德国程序设计大赛\2018-11-10 common knowdge\2018-11-10 common knowdge\2018-11-10 common knowdge.cpp(10): error C2065: “n”: 未声明的标识符
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-11-10德国程序设计大赛\2018-11-10 common knowdge\2018-11-10 common knowdge\2018-11-10 common knowdge.cpp(11): error C2065: “ans”: 未声明的标识符
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-11-10德国程序设计大赛\2018-11-10 common knowdge\2018-11-10 common knowdge\2018-11-10 common knowdge.cpp(11): error C2065: “n”: 未声明的标识符
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-11-10德国程序设计大赛\2018-11-10 common knowdge\2018-11-10 common knowdge\2018-11-10 common knowdge.cpp(12): error C2065: “ans”: 未声明的标识符

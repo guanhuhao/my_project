@@ -1,0 +1,3 @@
+﻿  vs测试c++.cpp
+c:\users\administrator\desktop\编程用\myproject\text文件\vs测试c++\vs测试c++\vs测试c++.cpp(4): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  vs测试c++.vcxproj -> C:\Users\Administrator\Desktop\编程用\myproject\text文件\vs测试c++\Debug\vs测试c++.exe

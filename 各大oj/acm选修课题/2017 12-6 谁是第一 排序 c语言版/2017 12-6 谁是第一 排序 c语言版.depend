@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1512558611 source:c:\microsoft visual studio\myprojects\acm选修课题\2017 12-6 谁是第一 排序 c语言版\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

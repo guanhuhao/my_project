@@ -1,0 +1,4 @@
+﻿  2018-10-2 F. Mountain Scenes.cpp
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-10-2北美邀请赛\2018-10-2 f. mountain scenes\2018-10-2 f. mountain scenes\2018-10-2 f. mountain scenes.cpp(8): warning C4244: “初始化”: 从“double”转换到“ll”，可能丢失数据
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-10-2北美邀请赛\2018-10-2 f. mountain scenes\2018-10-2 f. mountain scenes\2018-10-2 f. mountain scenes.cpp(35): warning C4244: “初始化”: 从“const ll”转换到“int”，可能丢失数据
+  2018-10-2 F. Mountain Scenes.vcxproj -> C:\Users\Administrator\Desktop\编程用\myproject\线上赛\2018-10-2北美邀请赛\2018-10-2 F. Mountain Scenes\Debug\2018-10-2 F. Mountain Scenes.exe

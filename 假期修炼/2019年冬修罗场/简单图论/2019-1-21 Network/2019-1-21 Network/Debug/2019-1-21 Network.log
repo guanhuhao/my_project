@@ -1,0 +1,4 @@
+﻿  2019-1-21 Network.cpp
+c:\users\administrator\desktop\编程用\myproject\假期修炼\2019年冬修罗场\简单图论\2019-1-21 network\2019-1-21 network\2019-1-21 network.cpp(13): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\编程用\myproject\假期修炼\2019年冬修罗场\简单图论\2019-1-21 network\2019-1-21 network\2019-1-21 network.cpp(42): warning C4018: “<”: 有符号/无符号不匹配
+  2019-1-21 Network.vcxproj -> C:\Users\Administrator\Desktop\编程用\myproject\假期修炼\2019年冬修罗场\简单图论\2019-1-21 Network\Debug\2019-1-21 Network.exe

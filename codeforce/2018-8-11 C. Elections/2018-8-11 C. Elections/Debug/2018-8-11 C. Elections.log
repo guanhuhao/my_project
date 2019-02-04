@@ -1,0 +1,4 @@
+﻿  stdafx.cpp
+  2018-8-11 C. Elections.cpp
+c:\users\administrator\desktop\编程用\myproject\codeforce\2018-8-11 c. elections\2018-8-11 c. elections\2018-8-11 c. elections.cpp(32): error C2228: “.push_back”的左边必须有类/结构/联合
+  c:\users\administrator\desktop\编程用\myproject\codeforce\2018-8-11 c. elections\2018-8-11 c. elections\2018-8-11 c. elections.cpp(32): note: 类型是“int”

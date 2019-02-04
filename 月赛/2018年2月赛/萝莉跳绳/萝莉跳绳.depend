@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1519394190 source:c:\microsoft visual studio\myprojects\月赛\2018年2月赛\萝莉跳绳\main.cpp
+	<iostream>
+	<stdio.h>
+

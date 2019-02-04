@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1514726137 source:c:\microsoft visual studio\myprojects\月赛\2017年12月赛\2017 12-31 i 算面积\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1519400100 source:c:\microsoft visual studio\myprojects\月赛\2018年2月赛\括号串（2）栈\main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<stack>
+

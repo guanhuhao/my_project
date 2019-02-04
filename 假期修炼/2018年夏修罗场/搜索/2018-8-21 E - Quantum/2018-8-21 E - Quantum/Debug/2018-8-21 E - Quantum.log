@@ -1,0 +1,5 @@
+﻿  2018-8-21 E - Quantum.cpp
+c:\users\administrator\desktop\编程用\myproject\暑期课程\搜索\2018-8-21 e - quantum\2018-8-21 e - quantum\2018-8-21 e - quantum.cpp(10): warning C4114: 多次使用同一类型限定符
+c:\users\administrator\desktop\编程用\myproject\暑期课程\搜索\2018-8-21 e - quantum\2018-8-21 e - quantum\2018-8-21 e - quantum.cpp(63): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\编程用\myproject\暑期课程\搜索\2018-8-21 e - quantum\2018-8-21 e - quantum\2018-8-21 e - quantum.cpp(84): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+  2018-8-21 E - Quantum.vcxproj -> C:\Users\Administrator\Desktop\编程用\myproject\暑期课程\搜索\2018-8-21 E - Quantum\Debug\2018-8-21 E - Quantum.exe

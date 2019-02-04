@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1509537000 source:c:\microsoft visual studio\myprojects\2017 11-1 到底有多二\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

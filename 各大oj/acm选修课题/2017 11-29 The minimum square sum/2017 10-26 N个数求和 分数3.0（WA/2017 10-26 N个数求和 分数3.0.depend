@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1509031450 source:c:\microsoft visual studio\myprojects\2017 10-26 n个数求和 分数3.0\main.c
+	<stdio.h>
+	<stdlib.h>
+

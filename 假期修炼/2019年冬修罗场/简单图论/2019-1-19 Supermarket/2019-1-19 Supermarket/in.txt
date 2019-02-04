@@ -1,0 +1,38 @@
+#include <cstdio>
+ #include <map>
+using namespace std;
+const int N=10005;
+struct link{ int a,b,flag;}t[N<<1],q[N<<3];
+ int f[N],pw[N],ans[N<<3]; char c[10]; map<int,bool>mark;
+int sf(int x) {return x==f[x]?x:f[x]=sf(f[x]);}
+void Union(int a,int b){
+    int fa=sf(a),fb=sf(b);
+    if(fa!=fb) if(pw[fa]>pw[fb] || pw[fa]==pw[fb]&&fa<fb) f[fb]=fa; else f[fa]=fb;
+}
+ int main(){
+     bool flag=0; int n,m,x,y,Q;
+    while(~scanf("%d",&n)){  if(flag) puts(""); flag=1; 
+         mark.clear();
+       for(int i=0;i<n;i++) f[i]=i,scanf("%d",&pw[i]);
+        scanf("%d",&m);
+       for(int i=0;i<m;i++){
+           scanf("%d%d",&t[i].a,&t[i].b);
+            if(t[i].a>t[i].b) swap(t[i].a,t[i].b);//前小后大 
+       } scanf("%d",&Q);
+       for(int i=0;i<Q;i++){
+             scanf("%s",&c);
+             if(c[0]=='d'){
+                scanf("%d%d",&q[i].a,&q[i].b);
+                 if(q[i].a>q[i].b) swap(q[i].a,q[i].b);//前小后大 
+                 q[i].flag=1; mark[q[i].a*N+q[i].b]=1; //标记区分
+             } else scanf("%d",&q[i]),q[i].flag=0;//标记区分
+         } for(int i=0;i<m;i++) if(!mark[t[i].a*N+t[i].b]) Union(t[i].a,t[i].b);//不用破坏的先连起来 
+         for(int i=Q-1;i>=0;i--){//从后往前处理 
+             if(q[i].flag) Union(q[i].a,q[i].b); 
+             else {
+                 int fa=sf(q[i].a); 
+                 ans[i]=pw[fa]>pw[q[i].a]?fa:-1;
+             }
+         } for(int i=0;i<Q;i++) if(!q[i].flag) printf("%d\n",ans[i]);
+     } return 0;
+ }

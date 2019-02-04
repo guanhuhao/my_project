@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1512529445 source:c:\microsoft visual studio\myprojects\acm选修课题\2017 12-6 little elephant and function  寻找满足条件的排列\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1525164886 source:c:\users\administrator\desktop\编程用\myproject\text文件\cb测试2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

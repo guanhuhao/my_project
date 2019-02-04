@@ -1,0 +1,25 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: 高精度整数加减乘计数器 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\mac\AppData\Local\Temp\RSPF79F.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/高精度整数加减乘计数器.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"C:\Microsoft Visual Studio\MyProjects\高精度整数加减乘计数器\计算器.cpp"
+]
+Creating command line "cl.exe @C:\Users\mac\AppData\Local\Temp\RSPF79F.tmp" 
+<h3>Output Window</h3>
+Compiling...
+计算器.cpp
+
+
+
+<h3>Results</h3>
+计算器.obj - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

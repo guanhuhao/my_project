@@ -1,0 +1,21 @@
+NO:hahaharname:root
+password:ghh
+
+NO:1
+username:wangtao
+password:123456
+
+NO:2
+username:guanhuhao
+password:19990320
+
+NO:3
+username:guanhuhao1
+password:19990320
+
+login
+root
+ghh
+show me all passwords
+
+

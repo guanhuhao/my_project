@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1519288486 source:c:\microsoft visual studio\myprojects\数据结构\二分查找\main.c
+	<stdio.h>
+	<stdlib.h>
+

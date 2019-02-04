@@ -1,0 +1,8 @@
+﻿  2019-1-26 Pairs Forming LCM.cpp
+d:\my project\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm.cpp(9): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+d:\my project\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm.cpp(19): warning C4018: “<”: 有符号/无符号不匹配
+d:\my project\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm.cpp(29): warning C4018: “<”: 有符号/无符号不匹配
+d:\my project\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm.cpp(50): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 2 拥有了类型“ll”
+  d:\my project\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm.cpp(50): note: 请考虑在格式字符串中使用“%lld”
+  d:\my project\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm\2019-1-26 pairs forming lcm.cpp(50): note: 请考虑在格式字符串中使用“%I64d”
+  2019-1-26 Pairs Forming LCM.vcxproj -> D:\my project\2019-1-26 Pairs Forming LCM\Debug\2019-1-26 Pairs Forming LCM.exe

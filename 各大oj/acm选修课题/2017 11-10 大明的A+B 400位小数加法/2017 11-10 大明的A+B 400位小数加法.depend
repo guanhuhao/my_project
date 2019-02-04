@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1510380134 source:c:\microsoft visual studio\myprojects\2017 11-10 大明的a+b 400位小数加法\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

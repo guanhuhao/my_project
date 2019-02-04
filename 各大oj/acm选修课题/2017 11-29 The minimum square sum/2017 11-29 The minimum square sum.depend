@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1511965946 source:c:\microsoft visual studio\myprojects\2017 11-29 the minimum square sum\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

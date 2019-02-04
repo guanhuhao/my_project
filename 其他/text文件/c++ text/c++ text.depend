@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1511080479 source:c:\microsoft visual studio\myprojects\c++ text\main.cpp
+	<iostream>
+	<cstdio>
+	<algorithm>
+	<cmath>
+	<string>
+	<cstring>
+	<set>
+	<queue>
+	<stack>
+	<stdlib.h>
+	<map>
+
+1512365894 source:c:\microsoft visual studio\myprojects\text文件\c++ text\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<algorithm>
+
+1542950455 source:c:\users\administrator\desktop\编程用\myproject\text文件\c++ text\main.cpp
+	<bits/stdc++.h>
+

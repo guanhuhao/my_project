@@ -1,0 +1,4 @@
+﻿  线性表（C语言实现）.cpp
+c:\users\administrator\desktop\编程用\myproject\数据结构\线性表（c语言实现）\线性表（c语言实现）\线性表（c语言实现）.cpp(74): warning C4715: “List<int>::pop”: 不是所有的控件路径都返回值
+c:\users\administrator\desktop\编程用\myproject\数据结构\线性表（c语言实现）\线性表（c语言实现）\线性表（c语言实现）.cpp(91): warning C4715: “List<int>::narrow”: 不是所有的控件路径都返回值
+  线性表（C语言实现）.vcxproj -> C:\Users\Administrator\Desktop\编程用\myproject\数据结构\线性表（C语言实现）\Debug\线性表（C语言实现）.exe

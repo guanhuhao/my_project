@@ -1,0 +1,6 @@
+﻿  2018-8-31 F - The Robbery.cpp
+c:\users\administrator\desktop\编程用\myproject\暑期课程\搜索\2018-8-31 f - the robbery\2018-8-31 f - the robbery\2018-8-31 f - the robbery.cpp(26): warning C4244: “参数”: 从“ll”转换到“const unsigned int”，可能丢失数据
+c:\users\administrator\desktop\编程用\myproject\暑期课程\搜索\2018-8-31 f - the robbery\2018-8-31 f - the robbery\2018-8-31 f - the robbery.cpp(28): warning C4244: “参数”: 从“ll”转换到“const unsigned int”，可能丢失数据
+c:\users\administrator\desktop\编程用\myproject\暑期课程\搜索\2018-8-31 f - the robbery\2018-8-31 f - the robbery\2018-8-31 f - the robbery.cpp(30): warning C4244: “参数”: 从“ll”转换到“const unsigned int”，可能丢失数据
+c:\users\administrator\desktop\编程用\myproject\暑期课程\搜索\2018-8-31 f - the robbery\2018-8-31 f - the robbery\2018-8-31 f - the robbery.cpp(57): warning C4018: “<=”: 有符号/无符号不匹配
+  2018-8-31 F - The Robbery.vcxproj -> C:\Users\Administrator\Desktop\编程用\myproject\暑期课程\搜索\2018-8-31 F - The Robbery\Debug\2018-8-31 F - The Robbery.exe

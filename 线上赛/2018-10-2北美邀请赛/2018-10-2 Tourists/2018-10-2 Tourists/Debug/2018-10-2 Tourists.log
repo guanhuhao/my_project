@@ -1,0 +1,4 @@
+﻿  2018-10-2 Tourists.cpp
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-10-2北美邀请赛\2018-10-2 tourists\2018-10-2 tourists\2018-10-2 tourists.cpp(7): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\编程用\myproject\线上赛\2018-10-2北美邀请赛\2018-10-2 tourists\2018-10-2 tourists\2018-10-2 tourists.cpp(19): warning C4018: “<”: 有符号/无符号不匹配
+  2018-10-2 Tourists.vcxproj -> C:\Users\Administrator\Desktop\编程用\myproject\线上赛\2018-10-2北美邀请赛\2018-10-2 Tourists\Debug\2018-10-2 Tourists.exe

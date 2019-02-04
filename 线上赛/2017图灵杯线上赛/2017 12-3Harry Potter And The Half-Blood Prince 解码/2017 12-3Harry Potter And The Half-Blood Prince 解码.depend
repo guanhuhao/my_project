@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1512277719 source:c:\microsoft visual studio\myprojects\线上赛\2017图灵杯线上赛\2017 12-3harry potter and the half-blood prince 解码\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

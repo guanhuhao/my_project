@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1512140821 source:c:\microsoft visual studio\myprojects\2017 12-1 hearthstone ii 第二类stirling数\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

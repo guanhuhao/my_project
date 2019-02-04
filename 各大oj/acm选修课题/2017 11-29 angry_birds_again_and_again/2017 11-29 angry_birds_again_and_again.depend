@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1512129173 source:c:\microsoft visual studio\myprojects\2017 11-29 angry_birds_again_and_again\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

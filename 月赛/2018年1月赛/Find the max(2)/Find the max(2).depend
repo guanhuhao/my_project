@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1518878692 source:c:\microsoft visual studio\myprojects\月赛\2018年1月赛\find the max(2)\main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<algorithm>
+

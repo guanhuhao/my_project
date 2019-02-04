@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1510143598 source:c:\microsoft visual studio\myprojects\2017 11-8 the screw matrix(ÉßĞÎÌîÊı)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

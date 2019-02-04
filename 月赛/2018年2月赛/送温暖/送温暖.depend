@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1519359102 source:c:\microsoft visual studio\myprojects\月赛\2018年2月赛\送温暖\main.cpp
+	<iostream>
+	<stdio.h>
+

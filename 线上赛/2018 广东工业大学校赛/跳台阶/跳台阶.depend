@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1521868841 source:c:\users\administrator\desktop\编程用\myproject\线上赛\2018 广东工业大学校赛\跳台阶\main.c
+	<stdio.h>
+	<stdlib.h>
+
